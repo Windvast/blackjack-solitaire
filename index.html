@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blackjack</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                text-decoration: none;
+            }
+            h2, h3{
+                text-align: center;
+                margin: 25px;
+            }
+            .grid-container {
+                margin: 25px auto;
+                width: 630px;
+                height: 659px;
+                
+                background-color: bisque;
+                border: black 5px solid;
+                border-radius: 10px;
+                position: relative;
+            }
+            .discard-container{
+                top: 300px;
+                right: 100px;
+                width: 267px;
+                height: 342px;
+                background-color: gray;
+                border: black 5px solid;
+                border-radius: 10px;
+                position: absolute;
+            }
+            .grid, .discard{
+                width: 96px;
+                height: 133.5px;
+                background-color: rgba(255,255,255,0.2);
+                border: black 2px dashed;
+                border-radius: 3px;
+                position: absolute;
+                text-align: center;
+                line-height: 133.5px;
+                font-size: larger;
+            }
+            .grid:hover, .discard:hover{
+                background-color: rgba(255,255,255,0.7);
+                cursor: pointer;
+            }
+            #grid-2-0,
+            #grid-3-0,
+            #grid-2-4,
+            #grid-3-4
+            {
+                display: none;
+            }
+            .deck{
+                width:96px;
+                height: 133.5px;
+                border: black 2px solid;
+                top: 110px;
+                left: 100px;
+                position: absolute;;
+                text-align: center;
+                line-height: 133.5px;
+                font-size: large;
+                border-radius: 3px;
+            }
+            .deck:hover{
+                box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+            }
+            .deckfont{
+                font-size: large;
+                position: relative;
+                top: 80px;
+                left: 100px;
+
+            }
+            .deck-container{
+                height: 150px;
+                width: 120px;
+                position: absolute;
+            }
+            .score{
+                text-align: center;
+                font-size: larger;
+            }
+        </style>
+        <script src="jquery-3.4.1.js"></script>
+        <script src="main.js"></script>
+        <script src="support.js"></script>
+        <script src="draft.js"></script>
+    </head>
+    <body>
+        <h2>Blackjack Solitaire</h2>
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="deck-container">
+            <span class="deckfont">Deck</span>
+            <div class="deck"></div>
+        </div>
+        <div class="grid-container">
+            <div class="grid" id="grid-0-0"></div>
+            <div class="grid" id="grid-0-1"></div>
+            <div class="grid" id="grid-0-2"></div>
+            <div class="grid" id="grid-0-3"></div>
+            <div class="grid" id="grid-0-4"></div>
+            <div class="grid" id="grid-1-0"></div>
+            <div class="grid" id="grid-1-1"></div>
+            <div class="grid" id="grid-1-2"></div>
+            <div class="grid" id="grid-1-3"></div>
+            <div class="grid" id="grid-1-4"></div>
+            <div class="grid" id="grid-2-0"></div>
+            <div class="grid" id="grid-2-1"></div>
+            <div class="grid" id="grid-2-2"></div>
+            <div class="grid" id="grid-2-3"></div>
+            <div class="grid" id="grid-2-4"></div>
+            <div class="grid" id="grid-3-0"></div>
+            <div class="grid" id="grid-3-1"></div>
+            <div class="grid" id="grid-3-2"></div>
+            <div class="grid" id="grid-3-3"></div>
+            <div class="grid" id="grid-3-4"></div>
+        </div>
+        <div class="discard-container">
+            <div class="discard" id="discard-0-0"></div>
+            <div class="discard" id="discard-0-1"></div>
+            <div class="discard" id="discard-1-0"></div>
+            <div class="discard" id="discard-1-1"></div>
+        </div>
+        <h3>@windvast</h2>
+    </body>
+</html>
