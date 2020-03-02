@@ -11,12 +11,55 @@
                 margin: 0;
                 text-decoration: none;
             }
+            body{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                /* have to use getDocumentWidth to correct this value */
+                height:1000px;
+            }
             h2, h3{
                 text-align: center;
                 margin: 25px;
             }
+            .main{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 90%;
+                width: 90%;
+                margin: auto;
+            }
+            .deck-container{
+                height: 150px;
+                width: 267px;
+                position: relative;
+                order: 1;
+                flex: 0 1 auto;
+            }
+            .deck{
+                width:96px;
+                height: 133.5px;
+                border: black 2px solid;
+                text-align: center;
+                line-height: 133.5px;
+                font-size: large;
+                border-radius: 3px;
+            }
+            .deck:hover{
+                box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+            }
+            .deckfont{
+                font-size: large;
+                text-align: center;
+                display: inline-block;
+                width:96px;
+            }
+            .score{
+                text-align: center;
+                font-size: larger;
+            }
             .grid-container {
-                margin: 25px auto;
                 width: 630px;
                 height: 659px;
                 
@@ -24,16 +67,18 @@
                 border: black 5px solid;
                 border-radius: 10px;
                 position: relative;
+                order: 2;
+                flex: 0 1 auto;
             }
             .discard-container{
-                top: 300px;
-                right: 100px;
                 width: 267px;
                 height: 342px;
                 background-color: gray;
                 border: black 5px solid;
                 border-radius: 10px;
-                position: absolute;
+                position: relative;
+                order: 3;
+                flex: 0 1 auto;
             }
             .grid, .discard{
                 width: 96px;
@@ -57,49 +102,25 @@
             {
                 display: none;
             }
-            .deck{
-                width:96px;
-                height: 133.5px;
-                border: black 2px solid;
-                top: 110px;
-                left: 100px;
-                position: absolute;;
-                text-align: center;
-                line-height: 133.5px;
-                font-size: large;
-                border-radius: 3px;
-            }
-            .deck:hover{
-                box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
-            }
-            .deckfont{
-                font-size: large;
-                position: relative;
-                top: 80px;
-                left: 100px;
-
-            }
-            .deck-container{
-                height: 150px;
-                width: 120px;
-                position: absolute;
-            }
-            .score{
-                text-align: center;
-                font-size: larger;
-            }
         </style>
         <script src="jquery-3.4.1.js"></script>
         <script src="main.js"></script>
         <script src="support.js"></script>
     </head>
     <body>
-        <h2>Blackjack Solitaire</h2>
-        <div class="score">Score: <span id="score">0</span></div>
+        <div class="header">
+            <h2>Blackjack Solitaire</h2>
+            <div class="score">Score: <span id="score">0</span></div>
+            
+        </div>
+
+        <div class="main">
         <div class="deck-container">
             <span class="deckfont">Deck</span>
             <div class="deck"></div>
         </div>
+
+        
         <div class="grid-container">
             <div class="grid" id="grid-0-0"></div>
             <div class="grid" id="grid-0-1"></div>
@@ -122,12 +143,18 @@
             <div class="grid" id="grid-3-3"></div>
             <div class="grid" id="grid-3-4"></div>
         </div>
+
         <div class="discard-container">
             <div class="discard" id="discard-0-0"></div>
             <div class="discard" id="discard-0-1"></div>
             <div class="discard" id="discard-1-0"></div>
             <div class="discard" id="discard-1-1"></div>
         </div>
-        <h3>@windvast</h2>
+        </div>
+
+        <div class="footer">
+           <h3>@windvast</h2> 
+        </div>
+        
     </body>
 </html>
